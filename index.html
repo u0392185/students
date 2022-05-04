@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <h1></h1>
+        <button onclick="getStudentName()">Click for name</button>
+        <script type="text/javascript">
+            var students = [
+                'David', 'Natalie', 'Taryn', 'Ryan', 'Tim', 'Holden', 'Sam', 'Jonathan', 'Micah', 'Colton',
+                'Isaac', 'Jeremy', 'Kate', 'Bryson', 'Ciara', 'Ed', 'Alex', 'Courtney', 'Lucien', 'Tanya',
+                'Robin', 'Maren', 'Eric', 'Kami', 'Kevin', 'Kammin', 'Eli', 'Joshua', 'Khoi', 'Brinton',
+                'Joel', 'Jayden', 'Grant', 'Sage'
+            ]
+    
+            function getStudentName() {
+                var index = Math.floor(Math.random() * students.length);
+    
+                var name = students[index]
+    
+                var heading =  document.querySelector('h1');
+                heading.innerHTML = name
+            }
+        </script>
+    </body>
+</html>
