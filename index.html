@@ -20,6 +20,14 @@
                 var heading =  document.querySelector('h1');
                 heading.innerHTML = name
             }
+
+            function tempRemove(name){
+                var theIndexToRemove = students.indexOf(name)
+                if(Number.isInteger(theIndexToRemove)){
+                    var removed = students.splice(theIndexToRemove, 1);
+                    console.log("Removed the following name: ", removed)
+                }
+            }
         </script>
     </body>
 </html>
