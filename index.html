@@ -4,7 +4,15 @@
     </head>
     <body>
         <h1></h1>
-        <button onclick="getStudentName()">Click for name</button>
+        <p>
+            <button onclick="getStudentName()">Click for name</button>
+        </p>
+        <p>
+            <label for="#studentName">Student to remove temporarily</label>
+            <input type="text" id="studentName" />
+            <button onclick="tempRemove()">Remove temporarily</button>
+        </p>
+
         <script type="text/javascript">
             var students = [
                 'David', 'Natalie', 'Taryn', 'Tim', 'Holden', 'Sam', 'Jonathan', 'Micah', 'Colton',
@@ -21,11 +29,18 @@
                 heading.innerHTML = name
             }
 
-            function tempRemove(name){
-                var theIndexToRemove = students.indexOf(name)
+            function tempRemove(){
+                var nameInput = document.getElementById('studentName')
+                var name = nameInput.value
+                var theIndexToRemove = students.findIndex(function(element) {
+                
+                    return element.toLowerCase() === name.toLowerCase();
+                });
+
                 if(Number.isInteger(theIndexToRemove)){
+                    console.log(theIndexToRemove)
                     var removed = students.splice(theIndexToRemove, 1);
-                    console.log("Removed the following name: ", removed)
+                    alert(`Removed ${removed[0]}`)
                 }
             }
         </script>
