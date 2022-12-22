@@ -12,37 +12,7 @@
             <input type="text" id="studentName" />
             <button onclick="tempRemove()">Remove temporarily</button>
         </p>
-
-        <script type="text/javascript">
-            var students = [
-                'David', 'Natalie', 'Taryn', 'Tim', 'Holden', 'Sam', 'Jonathan', 'Micah', 'Colton',
-                 'Jeremy', 'Kate', 'Bryson', 'Ciara', 'Ed', 'Alex', 'Courtney', 'Lucien', 'Tanya', 'Maren', 'Eric', 'Kevin', 'Kammin', 'Eli', 'Joshua', 'Khoi', 'Brinton',
-                'Joel', 'Jayden', 'Grant', 'Sage', 'Avyrie'
-            ]
-    
-            function getStudentName() {
-                var index = Math.floor(Math.random() * students.length);
-    
-                var name = students[index]
-    
-                var heading =  document.querySelector('h1');
-                heading.innerHTML = name
-            }
-
-            function tempRemove(){
-                var nameInput = document.getElementById('studentName')
-                var name = nameInput.value
-                var theIndexToRemove = students.findIndex(function(element) {
-                
-                    return element.toLowerCase() === name.toLowerCase();
-                });
-
-                if(Number.isInteger(theIndexToRemove)){
-                    console.log(theIndexToRemove)
-                    var removed = students.splice(theIndexToRemove, 1);
-                    alert(`Removed ${removed[0]}`)
-                }
-            }
-        </script>
+        <script type="text/javascript" src="names.js"></script>
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
